@@ -5,6 +5,9 @@ Project was built to create an application that can be used to generate a passwo
 
 
 ## Usage
+
+<a href="https://ruledbysaturn.github.io/Password-Generator/">Link to Deployed Page</a>
+
 When user loads application they will see the generator with red "Generate Password" button. When user clicks "Generate Password", they will receive prompt window asking for how many characters they would like the password to be.
 
 ![initial appearance of app](assets/Screenshot%201.png)
