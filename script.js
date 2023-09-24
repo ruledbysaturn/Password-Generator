@@ -13,17 +13,14 @@ var selection = [];
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
-  console.log("howdy  howdy dhowdy ")
-  //1. prompt user for password criteria
-  //   a. password length 8 < 128 characters
-  //   b. lowercase, uppercase, numbers, special characters
-  //2. validate input
-  //3. generate password based on criteria
-
-
-  //4. display generated password on page
-  return "Generated Password will go here";
+  var password = "";
+  for(var i=0; i < characLength; i++){
+    var random = Math.floor(Math.random() * selection.length);
+    password = password + selection[random];
+  }
+  return password;
 }
+
 //prompting user password criteria
 function prompts() {
   selection = [];
@@ -50,13 +47,14 @@ function prompts() {
 }
 // Write password to the #password input
 function writePassword() {
-  var rightprompts();
+  var rightprompts = prompts();
 
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  if (rightprompts) {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
-
+    passwordText.value = password;
+  }
 }
 
 // Add event listener to generate button
