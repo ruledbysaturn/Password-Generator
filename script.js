@@ -12,6 +12,7 @@ var characLength = 8;
 var selection = [];
 var generateBtn = document.querySelector("#generate");
 
+//defining generatePassword from writePassword function
 function generatePassword() {
   var password = "";
   for(var i=0; i < characLength; i++){
@@ -27,6 +28,7 @@ function prompts() {
 
   characLength = parseInt( prompt ("How many characters do you want your password to be?"));
 
+//tells user that password must be a number if they do not type in a number
   if(isNaN(characLength) || characLength < 8 || characLength > 128) {
     alert("Password length must be a number, minimum requirement 8, max characters 128.");
     return false;
