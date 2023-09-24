@@ -21,13 +21,24 @@ function generatePassword() {
 }
 
 function prompts() {
-  characLength = parseInt( prompt ("How many characters do you want your password to be? 8- 128 characters"));
+  characLength = parseInt( prompt ("How many characters do you want your password to be?"));
 
   if(isNaN(characLength) || characLength < 8 || characLength > 128) {
-    alert("Character length must be a number between 8-128 characters.");
-    
+    alert("Password length must be a number.");
+    return false;
   }
-
+  if (confirm("Click OK to include lowercase letters in your password")) {
+    selection = selection.concat(lowerCaseCharacters);
+  }  
+  if (confirm("Click OK to include uppercase letters in your password")) {
+    selection = selection.concat(upperCaseCharacters);
+  }
+  if (confirm("Click OK to include special characters in your password")) {
+      selection = selection.concat(specialCharacters);
+  }
+  if (confirm("Click OK to include numbers in your password")) {
+        selection = selection.concat(numericCharacters);
+  }
 }
 // Write password to the #password input
 function writePassword() {
