@@ -12,7 +12,7 @@ var characLength = 8;
 var selection = [];
 var generateBtn = document.querySelector("#generate");
 
-//defining generatePassword from writePassword function
+//defining generatePassword from writePassword function, function to generate the password
 function generatePassword() {
   var password = "";
   for(var i=0; i < characLength; i++){
