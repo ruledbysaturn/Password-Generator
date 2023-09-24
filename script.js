@@ -1,8 +1,13 @@
 // Assignment Code
+// array for special characters
 var specialCharacters = [ '!','"', '#', '$', '%', '&', '(', ')', '*', '+', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'];
+// array for lower case characters
 var lowerCaseCharacters = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+//array for upper case charaters
 var upperCaseCharacters = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+//array for numbers
 var numericCharacters = [ '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
 var characLength = 8;
 var selection = [];
 var generateBtn = document.querySelector("#generate");
@@ -19,8 +24,10 @@ function generatePassword() {
   //4. display generated password on page
   return "Generated Password will go here";
 }
-
+//prompting user password criteria
 function prompts() {
+  selection = [];
+
   characLength = parseInt( prompt ("How many characters do you want your password to be?"));
 
   if(isNaN(characLength) || characLength < 8 || characLength > 128) {
@@ -39,9 +46,12 @@ function prompts() {
   if (confirm("Click OK to include numbers in your password")) {
         selection = selection.concat(numericCharacters);
   }
+  return true;
 }
 // Write password to the #password input
 function writePassword() {
+  var rightprompts();
+
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
