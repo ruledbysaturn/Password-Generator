@@ -28,7 +28,7 @@ function prompts() {
   characLength = parseInt( prompt ("How many characters do you want your password to be?"));
 
   if(isNaN(characLength) || characLength < 8 || characLength > 128) {
-    alert("Password length must be a number.");
+    alert("Password length must be a number, minimum requirement 8, max characters 128.");
     return false;
   }
   if (confirm("Click OK to include lowercase letters in your password")) {
@@ -54,6 +54,8 @@ function writePassword() {
     var passwordText = document.querySelector("#password");
 
     passwordText.value = password;
+  } else{
+    passwordText.value ="";
   }
 }
 
